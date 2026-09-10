@@ -2,18 +2,23 @@
   "schemaVersion": 1,
   "note": "Voice Platform Model Catalog v0.1. EXAMPLE/PLANNED entries only — nothing is publishable yet (publishable=false on every entry). Persian ids/versions are taken verbatim from consumer-repository evidence (KafiCar Piper voices, Driver Accounting Vosk model). English entries are illustrative (no English artifact exists in the consumer repositories — OPEN). No checksum/size is fabricated. Language entries are independent: selecting English never requires Persian assets and vice-versa. allowedAppIds is DISTRIBUTION POLICY, NOT SECURITY.",
   "models": [
-    {
-      "id": "vosk-model-small-fa-0.42",
-      "version": "0.42",
-      "type": "stt",
-      "language": "fa",
-      "engine": "vosk",
-      "format": "vosk-model",
-      "displayName": "Vosk Persian (small)",
-      "publishable": false,
-      "example": true,
-      "notes": "Persian Vosk model dir observed in Driver Accounting (downloaded as vosk-model-small-fa-0.42, unpacked to model-fa). No artifact published yet."
-    },
+	{
+	  "id": "vosk-model-small-fa-0.42",
+	  "version": "0.42",
+	  "type": "stt",
+	  "language": "fa",
+	  "engine": "vosk",
+	  "format": "vosk-model",
+	  "displayName": "Vosk Persian (small)",
+	  "publishable": true,
+	  "example": false,
+	  "sizeBytes": 53431220,
+	  "sha256": "977cb5faa538f3a835ccfd35f5f6d8284b5c450b89c700b9bd4736b66536ad46",
+		  "artifact": {
+			"path": "releases/models-v0.1.0/vosk-model-small-fa-0.42.zip"
+		  },
+	  "notes": "Published Vosk Persian STT artifact from Model Distribution release models-v0.1.0."
+	},
     {
       "id": "vosk-model-small-en-us-0.15",
       "version": "0.15",
