@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/askarkafi/voice-platform-model-distribution/blob/main/catalog/schema/models.schema.json",
+  "title": "Voice Platform Model Catalog",
+  "description": "Static catalog describing downloadable voice models and their artifacts.",
+  "type": "object",
+  "required": ["schemaVersion", "models"],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/model"
+      }
+    }
+  },
+  "$defs": {
+    "model": {
+      "type": "object",
+      "required": ["modelId", "version", "type", "language", "engine", "artifact"],
+      "properties": {
+        "modelId": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "type": {"type": "string", "enum": ["stt", "tts"]},
+        "language": {"type": "string", "minLength": 2},
+        "engine": {"type": "string", "minLength": 1},
+        "sizeBytes": {"type": "integer", "minimum": 0},
+        "allowedAppIds": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "artifact": {
+          "type": "object",
+          "required": ["url", "path", "sizeBytes", "sha256"],
+          "properties": {
+            "url": {"type": "string", "format": "uri"},
+            "path": {"type": "string", "minLength": 1},
+            "sizeBytes": {"type": "integer", "minimum": 0},
+            "sha256": {
+              "type": "string",
+              "pattern": "^[A-Fa-f0-9]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "preview": {
+          "type": "object",
+          "properties": {
+            "url": {"type": "string", "format": "uri"},
+            "path": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
