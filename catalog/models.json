@@ -1,24 +1,30 @@
 {
   "schemaVersion": 1,
-  "note": "Voice Platform Model Catalog v0.1. EXAMPLE/PLANNED entries only — nothing is publishable yet (publishable=false on every entry). Persian ids/versions are taken verbatim from consumer-repository evidence (KafiCar Piper voices, Driver Accounting Vosk model). English entries are illustrative (no English artifact exists in the consumer repositories — OPEN). No checksum/size is fabricated. Language entries are independent: selecting English never requires Persian assets and vice-versa. allowedAppIds is DISTRIBUTION POLICY, NOT SECURITY.",
+  "note": "Voice Platform Model Catalog v0.1 (mirror of the distribution repository catalog). The Persian Vosk STT entry is a REAL published artifact (release models-v0.1.0). Other entries are example/planned and non-publishable. Consumers should use artifact.url supplied by the catalog rather than hard-coding URLs. allowedAppIds is DISTRIBUTION POLICY, NOT SECURITY.",
   "models": [
-	{
-	  "id": "vosk-model-small-fa-0.42",
-	  "version": "0.42",
-	  "type": "stt",
-	  "language": "fa",
-	  "engine": "vosk",
-	  "format": "vosk-model",
-	  "displayName": "Vosk Persian (small)",
-	  "publishable": true,
-	  "example": false,
-	  "sizeBytes": 53431220,
-	  "sha256": "977cb5faa538f3a835ccfd35f5f6d8284b5c450b89c700b9bd4736b66536ad46",
-		  "artifact": {
-			"path": "releases/models-v0.1.0/vosk-model-small-fa-0.42.zip"
-		  },
-	  "notes": "Published Vosk Persian STT artifact from Model Distribution release models-v0.1.0."
-	},
+    {
+      "id": "vosk-model-small-fa-0.42",
+      "version": "0.42",
+      "type": "stt",
+      "language": "fa",
+      "engine": "vosk",
+      "format": "vosk-model",
+      "displayName": "Vosk Persian (small)",
+      "publishable": true,
+      "example": false,
+      "sizeBytes": 53431220,
+      "sha256": "977cb5faa538f3a835ccfd35f5f6d8284b5c450b89c700b9bd4736b66536ad46",
+      "artifact": {
+        "url": "https://github.com/askarkafi/voice-platform-model-distribution/releases/download/models-v0.1.0/vosk-model-small-fa-0.42.zip",
+        "path": "releases/models-v0.1.0/vosk-model-small-fa-0.42.zip",
+        "sizeBytes": 53431220,
+        "sha256": "977cb5faa538f3a835ccfd35f5f6d8284b5c450b89c700b9bd4736b66536ad46"
+      },
+      "distribution": {
+        "allowedAppIds": ["rahyar", "voice-reference"]
+      },
+      "notes": "Apache-2.0 (Alpha Cephei). Attribution required. Published as GitHub Release Asset models-v0.1.0."
+    },
     {
       "id": "vosk-model-small-en-us-0.15",
       "version": "0.15",
@@ -26,7 +32,7 @@
       "language": "en",
       "engine": "vosk",
       "format": "vosk-model",
-      "displayName": "Vosk English (small) — illustrative",
+      "displayName": "Vosk English (small) - illustrative",
       "publishable": false,
       "example": true,
       "notes": "Illustrative English STT entry. No English artifact is present in the consumer repositories (OPEN). Do not publish."
@@ -50,7 +56,7 @@
         "path": "previews/tts/fa/fa_IR-ganji-medium.preview.mp3",
         "note": "Illustrative reference; preview file not yet published."
       },
-      "notes": "Piper voice observed in KafiCar assets (vits-piper-fa_IR-ganji-medium). Version is not evidenced; marked unknown and non-publishable."
+      "notes": "Piper voice observed in KafiCar assets (vits-piper-fa_IR-ganji-medium). Version is not evidenced; marked unknown and non-publishable. TTS publication remains BLOCKED - LICENSE UNVERIFIED."
     },
     {
       "id": "fa_IR-amir-medium",
@@ -65,7 +71,7 @@
       "distribution": {
         "allowedAppIds": ["voice-reference", "rahyar"]
       },
-      "notes": "Piper voice observed in KafiCar assets (fa_IR-amir-medium.onnx). Non-publishable example."
+      "notes": "Piper voice observed in KafiCar assets (fa_IR-amir-medium.onnx). Non-publishable example. TTS publication remains BLOCKED - LICENSE UNVERIFIED."
     },
     {
       "id": "en_US-lessac-medium",
@@ -74,7 +80,7 @@
       "language": "en",
       "engine": "sherpa-onnx/piper",
       "format": "piper-vits",
-      "displayName": "Lessac (English) — illustrative",
+      "displayName": "Lessac (English) - illustrative",
       "publishable": false,
       "example": true,
       "notes": "Illustrative English TTS entry demonstrating independent English artifacts. No English artifact is present in the consumer repositories (OPEN). Do not publish."

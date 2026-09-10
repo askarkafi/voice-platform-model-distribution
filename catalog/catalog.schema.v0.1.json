@@ -51,9 +51,10 @@
         },
         "artifact": {
           "type": "object",
-          "description": "Relative path to the runtime artifact package within the distribution root.",
+          "description": "Artifact location. `url` (absolute, catalog-supplied) is preferred; `path` is relative to the distribution base URL.",
           "additionalProperties": true,
           "properties": {
+            "url": { "type": "string", "description": "Absolute artifact URL supplied by the catalog (preferred over path)." },
             "path": { "type": "string", "minLength": 1 }
           }
         },
