@@ -1,4 +1,78 @@
 {
   "schemaVersion": 1,
-  "models": []
+  "note": "Voice Platform Model Catalog v0.1. EXAMPLE/PLANNED entries only — nothing is publishable yet (publishable=false on every entry). Persian ids/versions are taken verbatim from consumer-repository evidence (KafiCar Piper voices, Driver Accounting Vosk model). English entries are illustrative (no English artifact exists in the consumer repositories — OPEN). No checksum/size is fabricated. Language entries are independent: selecting English never requires Persian assets and vice-versa. allowedAppIds is DISTRIBUTION POLICY, NOT SECURITY.",
+  "models": [
+    {
+      "id": "vosk-model-small-fa-0.42",
+      "version": "0.42",
+      "type": "stt",
+      "language": "fa",
+      "engine": "vosk",
+      "format": "vosk-model",
+      "displayName": "Vosk Persian (small)",
+      "publishable": false,
+      "example": true,
+      "notes": "Persian Vosk model dir observed in Driver Accounting (downloaded as vosk-model-small-fa-0.42, unpacked to model-fa). No artifact published yet."
+    },
+    {
+      "id": "vosk-model-small-en-us-0.15",
+      "version": "0.15",
+      "type": "stt",
+      "language": "en",
+      "engine": "vosk",
+      "format": "vosk-model",
+      "displayName": "Vosk English (small) — illustrative",
+      "publishable": false,
+      "example": true,
+      "notes": "Illustrative English STT entry. No English artifact is present in the consumer repositories (OPEN). Do not publish."
+    },
+    {
+      "id": "fa_IR-ganji-medium",
+      "version": "unknown",
+      "type": "tts",
+      "language": "fa",
+      "engine": "sherpa-onnx/piper",
+      "format": "piper-vits",
+      "displayName": "Ganji",
+      "publishable": false,
+      "example": true,
+      "distribution": {
+        "allowedAppIds": ["voice-reference", "rahyar"]
+      },
+      "preview": {
+        "source": "remote",
+        "type": "audio",
+        "path": "previews/tts/fa/fa_IR-ganji-medium.preview.mp3",
+        "note": "Illustrative reference; preview file not yet published."
+      },
+      "notes": "Piper voice observed in KafiCar assets (vits-piper-fa_IR-ganji-medium). Version is not evidenced; marked unknown and non-publishable."
+    },
+    {
+      "id": "fa_IR-amir-medium",
+      "version": "unknown",
+      "type": "tts",
+      "language": "fa",
+      "engine": "sherpa-onnx/piper",
+      "format": "piper-vits",
+      "displayName": "Amir",
+      "publishable": false,
+      "example": true,
+      "distribution": {
+        "allowedAppIds": ["voice-reference", "rahyar"]
+      },
+      "notes": "Piper voice observed in KafiCar assets (fa_IR-amir-medium.onnx). Non-publishable example."
+    },
+    {
+      "id": "en_US-lessac-medium",
+      "version": "unknown",
+      "type": "tts",
+      "language": "en",
+      "engine": "sherpa-onnx/piper",
+      "format": "piper-vits",
+      "displayName": "Lessac (English) — illustrative",
+      "publishable": false,
+      "example": true,
+      "notes": "Illustrative English TTS entry demonstrating independent English artifacts. No English artifact is present in the consumer repositories (OPEN). Do not publish."
+    }
+  ]
 }

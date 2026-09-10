@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "voice-platform.model-catalog.schema.v0.1",
+  "title": "Voice Platform Model Catalog v0.1",
+  "description": "Distribution metadata for STT/TTS model artifacts. NOT a Core runtime contract. allowedAppIds is distribution policy, not a security mechanism.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schemaVersion", "models"],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "description": "1 == catalog schema v0.1. Consumers must reject unsupported versions and ignore unknown optional fields.",
+      "enum": [1]
+    },
+    "note": { "type": "string" },
+    "models": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/modelEntry" }
+    }
+  },
+  "$defs": {
+    "modelEntry": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "version", "type", "language"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "enum": ["stt", "tts"] },
+        "language": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Language token (e.g. fa, en). Entries are independent per language."
+        },
+        "engine": { "type": "string" },
+        "format": { "type": "string", "description": "Runtime format hint (e.g. vosk-model, piper-vits)." },
+        "displayName": { "type": "string" },
+        "publishable": {
+          "type": "boolean",
+          "description": "true means this entry references a real, to-be-published artifact with a real sha256 and sizeBytes."
+        },
+        "example": {
+          "type": "boolean",
+          "description": "true marks illustrative/example data that must not be treated as a real offer."
+        },
+        "sizeBytes": { "type": "integer", "minimum": 0 },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{64}$",
+          "description": "Required when publishable is true. Never fabricated."
+        },
+        "artifact": {
+          "type": "object",
+          "description": "Relative path to the runtime artifact package within the distribution root.",
+          "additionalProperties": true,
+          "properties": {
+            "path": { "type": "string", "minLength": 1 }
+          }
+        },
+        "preview": {
+          "type": "object",
+          "description": "Preview audio, independent of the full model package.",
+          "additionalProperties": true,
+          "properties": {
+            "source": { "type": "string", "enum": ["bundled", "remote"] },
+            "type": { "type": "string", "enum": ["audio"] },
+            "path": { "type": "string", "minLength": 1 },
+            "note": { "type": "string" }
+          }
+        },
+        "compatibility": {
+          "type": "object",
+          "description": "Advisory data only; thresholds are consumer policy (ADR-0016/0017).",
+          "additionalProperties": true,
+          "properties": {
+            "minRamMb": { "type": "integer", "minimum": 1 },
+            "recommendedRamMb": { "type": "integer", "minimum": 1 },
+            "minApi": { "type": "integer", "minimum": 1 },
+            "abis": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "distribution": {
+          "type": "object",
+          "description": "Distribution policy metadata. NOT a security mechanism.",
+          "additionalProperties": true,
+          "properties": {
+            "allowedAppIds": {
+              "type": "array",
+              "items": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}
