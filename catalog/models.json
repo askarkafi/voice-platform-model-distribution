@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "note": "Voice Platform Model Catalog v0.1 (mirror of the distribution repository catalog). The Persian Vosk STT entry is a REAL published artifact (release models-v0.1.0). Other entries are example/planned and non-publishable. Consumers should use artifact.url supplied by the catalog rather than hard-coding URLs. allowedAppIds is DISTRIBUTION POLICY, NOT SECURITY.",
+  "note": "Voice Platform Model Catalog v0.2 — Persian STT (Vosk) and Persian TTS (Amir, Reza Ibrahim, Gyro, Ganji Adabi) are real published/distributable artifacts. Consumers should use artifact.url supplied by the catalog rather than hard-coding URLs. allowedAppIds is DISTRIBUTION POLICY, NOT SECURITY.",
   "models": [
     {
       "id": "vosk-model-small-fa-0.42",
@@ -20,10 +20,147 @@
         "sizeBytes": 53431220,
         "sha256": "977cb5faa538f3a835ccfd35f5f6d8284b5c450b89c700b9bd4736b66536ad46"
       },
+      "compatibility": {
+        "minRamMb": 512,
+        "recommendedRamMb": 1024,
+        "minApi": 26,
+        "abis": ["arm64-v8a", "armeabi-v7a", "x86_64", "x86"]
+      },
       "distribution": {
-        "allowedAppIds": ["rahyar", "voice-reference"]
+        "allowedAppIds": ["rahyar", "voice-reference", "kafi-car"]
       },
       "notes": "Apache-2.0 (Alpha Cephei). Attribution required. Published as GitHub Release Asset models-v0.1.0."
+    },
+    {
+      "id": "fa_IR-amir-medium",
+      "version": "1.0.0",
+      "type": "tts",
+      "language": "fa",
+      "engine": "sherpa-onnx/piper",
+      "format": "piper-vits",
+      "displayName": "Amir (Persian Male)",
+      "publishable": true,
+      "example": false,
+      "sizeBytes": 67439763,
+      "sha256": "0e9a39e416e411dbdbe837b22fe6aa886133ab02143bb55a31f8aa022a7d098d",
+      "artifact": {
+        "url": "https://github.com/askarkafi/voice-platform-model-distribution/releases/download/models-v0.2.0/fa_IR-amir-medium.zip",
+        "path": "releases/models-v0.2.0/fa_IR-amir-medium.zip",
+        "sizeBytes": 67439763,
+        "sha256": "0e9a39e416e411dbdbe837b22fe6aa886133ab02143bb55a31f8aa022a7d098d"
+      },
+      "compatibility": {
+        "minRamMb": 512,
+        "recommendedRamMb": 1024,
+        "minApi": 26,
+        "abis": ["arm64-v8a", "armeabi-v7a", "x86_64", "x86"]
+      },
+      "distribution": {
+        "allowedAppIds": ["voice-reference", "rahyar", "kafi-car"]
+      },
+      "notes": "Clear, authoritative male Persian voice. Recommended for automotive navigation, assistance, and cabin environments."
+    },
+    {
+      "id": "fa_IR-reza_ibrahim-medium",
+      "version": "1.0.0",
+      "type": "tts",
+      "language": "fa",
+      "engine": "sherpa-onnx/piper",
+      "format": "piper-vits",
+      "displayName": "Reza Ibrahim (Persian Male Baritone)",
+      "publishable": true,
+      "example": false,
+      "sizeBytes": 67409940,
+      "sha256": "26818a0785dbda4bc1f78643caf708b4a7419ed8e4696fb347ba2d5604c617a6",
+      "artifact": {
+        "url": "https://github.com/askarkafi/voice-platform-model-distribution/releases/download/models-v0.2.0/fa_IR-reza_ibrahim-medium.zip",
+        "path": "releases/models-v0.2.0/fa_IR-reza_ibrahim-medium.zip",
+        "sizeBytes": 67409940,
+        "sha256": "26818a0785dbda4bc1f78643caf708b4a7419ed8e4696fb347ba2d5604c617a6"
+      },
+      "compatibility": {
+        "minRamMb": 512,
+        "recommendedRamMb": 1024,
+        "minApi": 26,
+        "abis": ["arm64-v8a", "armeabi-v7a", "x86_64", "x86"]
+      },
+      "distribution": {
+        "allowedAppIds": ["voice-reference", "rahyar", "kafi-car"]
+      },
+      "notes": "Warm, natural narrative baritone Persian voice for conversational companions and storytelling."
+    },
+    {
+      "id": "fa_IR-gyro-medium",
+      "version": "1.0.0",
+      "type": "tts",
+      "language": "fa",
+      "engine": "sherpa-onnx/piper",
+      "format": "piper-vits",
+      "displayName": "Gyro (Persian Male Modern)",
+      "publishable": true,
+      "example": false,
+      "sizeBytes": 67405987,
+      "sha256": "aa5880afe7de9d276df4a11061a95845597e2aa86a8cb56cb78973b6fa7cec0d",
+      "artifact": {
+        "url": "https://github.com/askarkafi/voice-platform-model-distribution/releases/download/models-v0.2.0/fa_IR-gyro-medium.zip",
+        "path": "releases/models-v0.2.0/fa_IR-gyro-medium.zip",
+        "sizeBytes": 67405987,
+        "sha256": "aa5880afe7de9d276df4a11061a95845597e2aa86a8cb56cb78973b6fa7cec0d"
+      },
+      "compatibility": {
+        "minRamMb": 512,
+        "recommendedRamMb": 1024,
+        "minApi": 26,
+        "abis": ["arm64-v8a", "armeabi-v7a", "x86_64", "x86"]
+      },
+      "distribution": {
+        "allowedAppIds": ["voice-reference", "rahyar", "kafi-car"]
+      },
+      "notes": "Youthful, modern conversational Persian voice."
+    },
+    {
+      "id": "fa_IR-ganji_adabi-medium",
+      "version": "1.0.0",
+      "type": "tts",
+      "language": "fa",
+      "engine": "sherpa-onnx/piper",
+      "format": "piper-vits",
+      "displayName": "Ganji Adabi (Persian Formal)",
+      "publishable": true,
+      "example": false,
+      "sizeBytes": 67406969,
+      "sha256": "0ec52a07e112d77d6cec8ab0120488ba9900934f0ac269986f77c3d6f0b76b69",
+      "artifact": {
+        "url": "https://github.com/askarkafi/voice-platform-model-distribution/releases/download/models-v0.2.0/fa_IR-ganji_adabi-medium.zip",
+        "path": "releases/models-v0.2.0/fa_IR-ganji_adabi-medium.zip",
+        "sizeBytes": 67406969,
+        "sha256": "0ec52a07e112d77d6cec8ab0120488ba9900934f0ac269986f77c3d6f0b76b69"
+      },
+      "compatibility": {
+        "minRamMb": 512,
+        "recommendedRamMb": 1024,
+        "minApi": 26,
+        "abis": ["arm64-v8a", "armeabi-v7a", "x86_64", "x86"]
+      },
+      "distribution": {
+        "allowedAppIds": ["voice-reference", "rahyar", "kafi-car"]
+      },
+      "notes": "Formal literary Persian voice with newsreader cadence."
+    },
+    {
+      "id": "fa_IR-ganji-medium",
+      "version": "1.0.0",
+      "type": "tts",
+      "language": "fa",
+      "engine": "sherpa-onnx/piper",
+      "format": "piper-vits",
+      "displayName": "Ganji (Legacy)",
+      "publishable": false,
+      "example": true,
+      "distribution": {
+        "allowedAppIds": ["voice-reference", "rahyar", "kafi-car"]
+      },
+      "notes": "Legacy baseline Piper voice observed in KafiCar assets."
     },
     {
       "id": "vosk-model-small-en-us-0.15",
@@ -36,42 +173,6 @@
       "publishable": false,
       "example": true,
       "notes": "Illustrative English STT entry. No English artifact is present in the consumer repositories (OPEN). Do not publish."
-    },
-    {
-      "id": "fa_IR-ganji-medium",
-      "version": "unknown",
-      "type": "tts",
-      "language": "fa",
-      "engine": "sherpa-onnx/piper",
-      "format": "piper-vits",
-      "displayName": "Ganji",
-      "publishable": false,
-      "example": true,
-      "distribution": {
-        "allowedAppIds": ["voice-reference", "rahyar"]
-      },
-      "preview": {
-        "source": "remote",
-        "type": "audio",
-        "path": "previews/tts/fa/fa_IR-ganji-medium.preview.mp3",
-        "note": "Illustrative reference; preview file not yet published."
-      },
-      "notes": "Piper voice observed in KafiCar assets (vits-piper-fa_IR-ganji-medium). Version is not evidenced; marked unknown and non-publishable. TTS publication remains BLOCKED - LICENSE UNVERIFIED."
-    },
-    {
-      "id": "fa_IR-amir-medium",
-      "version": "unknown",
-      "type": "tts",
-      "language": "fa",
-      "engine": "sherpa-onnx/piper",
-      "format": "piper-vits",
-      "displayName": "Amir",
-      "publishable": false,
-      "example": true,
-      "distribution": {
-        "allowedAppIds": ["voice-reference", "rahyar"]
-      },
-      "notes": "Piper voice observed in KafiCar assets (fa_IR-amir-medium.onnx). Non-publishable example. TTS publication remains BLOCKED - LICENSE UNVERIFIED."
     },
     {
       "id": "en_US-lessac-medium",

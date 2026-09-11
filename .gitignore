@@ -1,0 +1,12 @@
+# Distribution artifacts - published via GitHub Releases / Object Storage, not committed to git
+*.zip
+*.tar.bz2
+releases/
+packages/**/*.zip
+tools/packaged-models-metadata.json
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
