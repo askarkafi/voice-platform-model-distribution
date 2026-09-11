@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "note": "Voice Platform Model Catalog v0.2 — Persian STT (Vosk) and Persian TTS (Amir, Reza Ibrahim, Gyro, Ganji Adabi) are real published/distributable artifacts. Consumers should use artifact.url supplied by the catalog rather than hard-coding URLs. allowedAppIds is DISTRIBUTION POLICY, NOT SECURITY.",
+  "note": "Voice Platform Model Catalog v0.2 (mirror of distribution repository catalog) — Persian STT (Vosk) and Persian TTS (Amir, Reza Ibrahim, Gyro, Ganji Adabi) are real published/distributable artifacts. Consumers should use artifact.url supplied by the catalog rather than hard-coding URLs. allowedAppIds is DISTRIBUTION POLICY, NOT SECURITY.",
   "models": [
     {
       "id": "vosk-model-small-fa-0.42",
